@@ -9,7 +9,7 @@ Basic modes:
 * Visual: seleccionar
 
 Cómo puedo guardar? 
-`ESC :w` (
+`ESC :w`
 
 Cómo puedo salir?
 `ESC :q`
@@ -30,7 +30,7 @@ Las letras tienen asignadas diferentes funcionalidades, no escribir como tal.
 * `w`: desplazarte a la siguiente palabra, situa el cursor al principio de esta
 * `e`: desplazarte al final de la palabra en la que estaba el cursor
 * `b`: desplazarte a la palabra anterior, situa el cursor al principio de esta
-* `f` + char: ir hasta la primera ocurrencia del carácter, situa el cursor encima del char.
+* `f` + char: ir hasta la primera ocurrencia del carácter, situa el cursor encima del char
 * `t` + char: ir hasta la primera ocurencia del carácter, situa el cursos un carácter antes del char especificado
 * `:` + número línea: ir al número de línea indicado
 
@@ -43,7 +43,7 @@ Todos estos comandos pueden combinarse con números para indicar que se relace l
 Es el modo de escritura. Hay diversas formas de entrar:
 
 * `i`: el cursor se situa en la posición que estaba
-* `a`: el cursor se situa un carácter a la derecha de donde estaba.
+* `a`: el cursor se situa un carácter a la derecha de donde estaba
 * `I`: el cursor se situa al inicio de la línea, ignorando espacio en blanco
 * `A`: el cursor se situa al final de la línea
 * `o`: inserta una nueva línea en blanco debajo
@@ -52,7 +52,7 @@ Es el modo de escritura. Hay diversas formas de entrar:
 ## Reemplazar
 Sin necesidad de entrar en modo insert, eliminar y escribir. Puedes reemplazar:
 
-* `r` + char: reemplaza el carácter donde está el cursos por el char indicado, luego vuelve a normal mode
+* `r` + char: reemplaza el carácter donde está el cursor por el char indicado, luego vuelve a normal mode
 * `R` + chars: reemplaza los carácter a partir de donde está el cursor
 
 ## Visual mode
@@ -65,7 +65,7 @@ Modo para seleccionar el texto/código:
 \* puedes seleccionar más con el desplazamiento
 
 ### Combinaciones
-Se puede combinar la selección hecha con otros comandos, como `d` (ver sección, `y`.
+Se puede combinar la selección hecha con otros comandos, como `d` (ver sección de eliminar), `y` (ver sección de copiar).
 
 Una combinación que permite insertar en diversar líneas a la vez el mismo contenido es: `ctrl` + `v` + desplazamiento (selección en bloque) + `I` +  texto + `ESC`. Al apretar `ESC` aparecerá el texto escrito en todas las líneas seleccionadas en el bloque.
 
@@ -87,7 +87,7 @@ Después de eliminar puedes querer entrar en Insert mode, para evitar hacer `di`
 
 `s` equivale a `cl`.
 
-`S` equivale a `cc`
+`S` equivale a `cc`.
 
 ## Copiar y pegar
 ### Copiar
