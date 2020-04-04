@@ -106,7 +106,7 @@ Mediante `p` (paste):
 ### Ctrl + c, ctrl + v funciona?
 Con `y` y `p` se guarda lo copiado en registros internos de VIM. Para poder pegar algo copiado fuera de VIM, en otro programa se tiene que estar en modo Insert.
 
-* `i` + `ctrl + shit + v`
+* `i` + `ctrl + shift + v`
 
 ## Buscar
 
@@ -146,7 +146,7 @@ Concatenación de líneas:
 ### Identación
 * `<`: identa a la izquierda 
 * `>`: identa a la derecha
-* `gg=g`: autoidenta todo el código
+* `gg=G`: autoidenta todo el código
 
 ### Macros
 1. `q` + tecla: empezar a grabar una macro en la tecla indicada.
