@@ -71,7 +71,7 @@ Una combinación que permite insertar en diversar líneas a la vez el mismo cont
 
 
 ## Eliminar
-Para eliminar se utiliza `d`.
+Para eliminar se utiliza `d`. Lo eliminado se almacena en el mismo registro interno que `y` (ver sección Copiar y Pegar).
 
 Puede combinarse con desplazamiento y selección. Por ejemplo: 
 
@@ -103,20 +103,29 @@ Mediante `p` (paste):
 * `p`: pega en la línea de debajo del cursor
 * `P`: pega en la línea de encima del cursor
 
+Se puede pegar tanto lo copiado mediante `y` como lo eliminado (`d`, `c`, `s`...)
+
 ### Ctrl + c, ctrl + v funciona?
-Con `y` y `p` se guarda lo copiado en registros internos de VIM. Para poder pegar algo copiado fuera de VIM, en otro programa se tiene que estar en modo Insert.
+Con `y` y `p` se copia y pega lo copiado en registros internos de VIM. Para poder pegar algo copiado fuera de VIM, en otro programa se tiene que estar en modo Insert.
 
 * `i` + `ctrl + shift + v`
 
 ## Buscar
 
 * `/` + patrón: búsqueda case sensitive
-* `/c` + patrón: búsqueda no case sensitive
+* `/\c` + patrón: búsqueda no case sensitive
 
 Una vez buscado el patrón, para navegar por las coincidencias:
 
 * `n`: siguente coincidencia
 * `N`: coincidencia anterior
+
+También se pueden utilizar los siguentes comandos que no requieren de escribir el patrón, puesto que buscan la palabra sobre la que esté el cursor:
+
+* `#`: búsqueda de coincidencias previas
+* `*`: búsqueda de coincidencias anteriores
+
+Añadir que estos dos últimos comandos guardan la palabra en el registro de búsqueda. Esto significa que se puede cambiar el cursor de palabra y seguir buscando la palabra, patrón anterior mediante `n` y `N`.
 
 ### Buscar y substituir
 Utilizar la siguente regex: `:%s/patrón_buscar/patrón_substituir/gci`
@@ -143,6 +152,10 @@ Ir al man (manual) de la syscall, comando de bash:
 Concatenación de líneas:
 * `J`: concatena la línea en la que está el cursor con la de abajo
 
+Otras opciones al salir/guardar:
+* `:q!`: salir sin aplicar los cambios no guardados
+* `:` + `w`/`q` + `a`: `a` aplica guardar y/o salir a todos los ficheros abiertos
+
 ### Identación
 * `<`: identa a la izquierda 
 * `>`: identa a la derecha
@@ -156,13 +169,19 @@ Concatenación de líneas:
 
 ## Visualización de varios ficheros
 ### Pestañas
-* `:tabe` + nombre fichero: abre el fichero en otra pestaña
-* `gt`: desplazarse al fichero de la pestaña de la derecha
-* `gT`: desplazarse al fichero de la pestaña de la izquierda
+* `:tabe ` + nombre fichero: abre el fichero en otra pestaña
+* `gt`: desplazarse a la pestaña de la derecha
+* `gT`: desplazarse a la pestaña de la izquierda
+* num\_tab + `gt`: desplazarse a la pestaña num\_tab, la primera correponde al 1.
+
+Se puede abrir VIM directamente con los ficheros en pestañas diferentes:
+* `vim -p ` + ficheros
 
 ### División de la pantalla
 * `:sp` + fichero: abrir el fichero dividiendo la consola horizontalmente
 * `:vsp` + fichero: abrir el fichero dividiendo la consola verticalmente
 * `ctrl` + `w` + `j`/`k`/`h`/`l`: cambiar la vista activa
+
+Se pueden combinar las pestañas con la división de la pantalla. La división de los ficheros será local a la pestana. Es decir, en cada pestaña se puede tener una división diferente.
 
 
